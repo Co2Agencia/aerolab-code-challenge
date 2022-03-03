@@ -12,6 +12,8 @@ export const NavBar = ({ userData, setUserData, alerts2, dispatchAlert }) => {
   return (
     <nav className='animate__animated animate__fadeInDown'>
 
+      <div className='nav-container'>
+        
         <div className='nav-logo-container'>
             <img src={ getIconImages( navLogo ) } />
         </div>
@@ -20,6 +22,8 @@ export const NavBar = ({ userData, setUserData, alerts2, dispatchAlert }) => {
         setUserData={ setUserData }
         alerts2={ alerts2 } dispatchAlert = { dispatchAlert }
         />
+      </div>
+
 
     </nav>
   )
