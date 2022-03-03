@@ -1,19 +1,26 @@
 import React from 'react'
 import { getIconImages } from '../../helpers/getIconImages'
+import { useCheckMobile } from '../../hooks/useCheckMobile'
 import { AeroPay } from '../aeropay/AeroPay'
 
-export const NavBar = ({ userData, setUserData, alerts, setAlerts }) => {
+export const NavBar = ({ userData, setUserData, alerts2, dispatchAlert }) => {
+
+  const checkMobile = useCheckMobile()
+
+  const navLogo = ( checkMobile ) ? "aerolab-logo-2" : "aerolab-logo";
 
   return (
     <nav className='animate__animated animate__fadeInDown'>
 
         <div className='nav-logo-container'>
-            <img src={ getIconImages( 'aerolab-logo' ) } />
+            <img src={ getIconImages( navLogo ) } />
         </div>
 
         <AeroPay userData={ userData }
-        setUserData={ setUserData } setAlerts={ setAlerts } alerts={ alerts }/>
+        setUserData={ setUserData }
+        alerts2={ alerts2 } dispatchAlert = { dispatchAlert }
+        />
 
     </nav>
   )
-}
+  }

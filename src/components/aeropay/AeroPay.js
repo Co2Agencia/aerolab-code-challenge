@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getIconImages } from '../../helpers/getIconImages'
 import { BalanceBox } from './BalanceBox'
 
-export const AeroPay = ({ userData, setUserData, alerts, setAlerts }) => {
+export const AeroPay = ({ userData, setUserData, alerts2, dispatchAlert }) => {
     const arrowIconClass = "aeropay-arrow";
     const arrowIconClassActive = "aeropay-arrow-active"
 
@@ -28,8 +28,9 @@ export const AeroPay = ({ userData, setUserData, alerts, setAlerts }) => {
 
         {
             activeClass && <BalanceBox userData={ userData }
-                setUserData={ setUserData } setAlerts={ setAlerts }
-                alerts = { alerts } setActiveClass={ setActiveClass } />
+                setUserData={ setUserData } setActiveClass={ setActiveClass }
+                dispatchAlert = { dispatchAlert }
+                />
         }
 
     </div>    

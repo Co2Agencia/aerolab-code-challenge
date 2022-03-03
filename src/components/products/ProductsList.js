@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { filterProds } from '../../helpers/filterProds'
 import { getCategories } from '../../helpers/getCategories'
 import { useFetchProducts } from '../../hooks/useFetchProducts'
-import { Alert } from '../alerts/Alert'
 import { ProductCard } from './ProductCard'
+import { ProductCardSkeleton } from './ProductCardSkeleton'
 import { ProductsFilters } from './ProductsFilters'
 import { ProductsPagination } from './ProductsPagination'
 
-export const ProductsList = ({ userData, setUserData }) => {
+export const ProductsList = ({ userData, setUserData, dispatchAlert }) => {
 
-    const { data: prods, loading } = useFetchProducts()
-    
+    let { data: prods, loading } = useFetchProducts()
     const categories = getCategories( prods )
     
     const [ page, setPage ] = useState( 1 )
@@ -33,6 +32,7 @@ export const ProductsList = ({ userData, setUserData }) => {
         setFilteredProdsData( newProds )
 
     }, [ page, category, orderBy, loading ])
+
     
 
   return (
@@ -47,6 +47,7 @@ export const ProductsList = ({ userData, setUserData }) => {
 
         </div>
 
+        {/* Products filters */}
         <ProductsFilters 
             categories={categories}
             orderBy={ orderBy } setOrderBy={ setOrderBy }
@@ -55,15 +56,31 @@ export const ProductsList = ({ userData, setUserData }) => {
             pagesAmount = { filteredProdsData.pagesAmount }
         />
 
-        <div className='products-list'>
+        {/* Products List */}
+        <div 
+            className={( loading ) ? 'products-list products-loading' : 'products-list products-completed'}>
+            
             {
-                filteredProdsData.products &&
+                !loading ?
+
                     filteredProdsData.products.map( prod => (
-                        <ProductCard {...prod} userData={ userData } setUserData={ setUserData } key={ prod._id } />
+
+                        <ProductCard {...prod} userData={ userData } setUserData={ setUserData } 
+                        key={ prod._id } 
+                        dispatchAlert={ dispatchAlert } 
+                        />
                     ) )
+                    :
+                    <>
+                        <ProductCardSkeleton/>
+                        <ProductCardSkeleton/>
+                        <ProductCardSkeleton/>
+                        <ProductCardSkeleton/>
+                    </>
             }
         </div>
 
+        {/* Products Footer */}
         <div className='products-footer'>
 
             <div className='products-amount-container'>

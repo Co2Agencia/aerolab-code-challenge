@@ -1,5 +1,6 @@
 
 export const addProduct = async( productId, setProcessing, setUserData, newUserData ) => {
+
     const api_key = process.env.REACT_APP_API_KEY;
     const url = `https://coding-challenge-api.aerolab.co/redeem`;
     const data = JSON.stringify( { productId } )

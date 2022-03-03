@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { addPoints } from '../../helpers/addPoints'
+import { createUniqueId } from '../../helpers/createUniqueId'
 import { getIconImages } from '../../helpers/getIconImages'
 import { PointsButton } from '../buttons/PointsButton'
 
-export const BalanceBox = ( { userData, setUserData, alerts, setAlerts, setActiveClass } ) => {
+export const BalanceBox = ( { userData, setUserData, setActiveClass, dispatchAlert } ) => {
 
     const [ pointsSelected, setPointsSelected ] = useState( undefined )
     const [loading, setLoading] = useState( false )
@@ -29,18 +30,45 @@ export const BalanceBox = ( { userData, setUserData, alerts, setAlerts, setActiv
                             }
                         } )
                         setPointsSelected( undefined )
-                        setAlerts( [ ...alerts, { message: `${ pointsSelected } points added successfully!`, type: "success" } ] )
+
+                        const newAlert = {
+                            type: "success",
+                            text: `${ pointsSelected } points added successfully!`,
+                            id: createUniqueId()
+                        }
+
+                        dispatchAlert( {
+                            type: "add",
+                            payload: newAlert
+                        } )
                     }
                     else{
-                        const errorMsg = `${ pointsSelected } is not a valid amount of points to add`
-                        setAlerts( [ ...alerts, { message: errorMsg, type: "error" } ] )
+                        const newAlert = {
+                            type: "error",
+                            text: `${ pointsSelected } is not a valid amount of points to add`,
+                            id: createUniqueId()
+                        }
+
+                        dispatchAlert( {
+                            type: "add",
+                            payload: newAlert
+                        } )
                     }
 
                 } )
         }
         else{
-            const errorMsg = "No points selected"
-            setAlerts( [ ...alerts, { message: errorMsg, type: "error" } ] )
+            const newAlert = {
+                type: "error",
+                text: "No points selected",
+                id: createUniqueId()
+            }
+
+            dispatchAlert( {
+                type: "add",
+                payload: newAlert
+            } )
+
         }
     }
 

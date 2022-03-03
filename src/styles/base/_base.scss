@@ -103,3 +103,10 @@ body, html{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
+@media ( max-width: 475px ){
+    .tech-zone-container{
+        margin: 0 $side-margin-mobile;
+    }
+}

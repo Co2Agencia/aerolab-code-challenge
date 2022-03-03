@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
+import { alertReducer } from './components/alerts/alertReducer'
 import { AlertsList } from './components/alerts/AlertsList'
 import { CardsSection } from './components/cards/CardsSection'
 import { ProductsList } from './components/products/ProductsList'
@@ -14,6 +15,8 @@ export const TechZone = () => {
   })
 
   const [alerts, setAlerts] = useState( [] )
+  const [ alerts2, dispatchAlert ] = useReducer( alertReducer, [] )
+
 
   useEffect(()=>{
 
@@ -28,16 +31,19 @@ export const TechZone = () => {
 
   }, [])
 
+
   return (
     <div className='tech-zone-container'>
         <NavBar userData={ userData } 
           setUserData={ setUserData }
-          setAlerts = { setAlerts } alerts={ alerts }
+          alerts2 = { alerts2 } dispatchAlert = { dispatchAlert }
         />
         <Hero/>
         <CardsSection/>
-        <AlertsList alerts = { alerts } setAlerts={ setAlerts } />
-        <ProductsList userData={ userData } setUserData={ setUserData } />
+        <AlertsList alerts = { alerts } setAlerts={ setAlerts } 
+          alerts2 = { alerts2 } dispatchAlert = { dispatchAlert }
+        />
+        <ProductsList userData={ userData } setUserData={ setUserData } dispatchAlert={ dispatchAlert } />
         <Footer/>
     </div>
   )

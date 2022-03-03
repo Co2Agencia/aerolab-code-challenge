@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getIconImages } from '../../helpers/getIconImages';
 
-export const Alert = ({ index, type = "error", message = "", timeOut = 5000, alertIndex, setAlerts, alerts=[] }) => {
+export const Alert = ({ dispatchAlert, text, id, type = "error", timeOut = 8000 }) => {
 
     const alertIconSrc = (type === "error") ? getIconImages( "system-error" ) : getIconImages( "system-success" );
     const alertIconAlt = (type === "error") ? "Icon for error alert." : "Icon for success alert.";
@@ -13,23 +13,27 @@ export const Alert = ({ index, type = "error", message = "", timeOut = 5000, ale
     // If user hovers the alert, hover = true
     const [ hover, setHover ] = useState( false )
     const [ alertClass, setAlertClass ] = useState( "" )
-    const [ timeOutId, setTimeOutId ] = useState( null )
 
+    // Deletes the alert
     const closeAlert = () => {
-        setActive( false )
+
+        dispatchAlert( {
+            type: "delete",
+            payload: id
+        } )
+
     }
 
+    // If timeOut completes and user is not hovering the alert, 
+    // It will get deleted.
     useEffect( () => {
         
-        if( timePassed && !hover ) {
-            setAlertClass( `${ alertClass } animate__animated animate__fadeOut` )
-            setTimeout(() => {
-                if( !hover ) closeAlert()
-            }, 1000)
-        }
+        ( timePassed && !hover ) && closeAlert()
 
     }, [ timePassed, hover ] )
 
+
+    // Adds the timeOut and classes to the Alert
     useEffect(() => {
         
         setAlertClass( (type === "error" ) ? 'alert-container error' : "alert-container" )
@@ -39,24 +43,23 @@ export const Alert = ({ index, type = "error", message = "", timeOut = 5000, ale
             setTimePassed( true )
         }, timeOut )
 
-        setTimeOutId( timeOut2 )
 
         return () => {
-            const newAlerts = [ ...alerts.slice( 0, alertIndex ), ...alerts.slice( alertIndex+1, alerts.length ) ]
-            clearTimeout( timeOutId )
-            setAlerts( newAlerts )
+            clearTimeout( timeOut2 )
+            dispatchAlert( {
+                type: "delete",
+                payload: id
+            } )
+
         };
 
     }, [])
-
-    
 
 
     const handleMouseEnter = event => setHover( true )
     const handleMouseLeave = event => setHover( false )
 
     const handleClick = event => {
-        timeOutId && clearTimeout( timeOutId )
         closeAlert()
     }
 
@@ -71,10 +74,10 @@ export const Alert = ({ index, type = "error", message = "", timeOut = 5000, ale
 
                 {
                     ( type === "error" ) ?
-                        <p className='text-1-d'>{ message }</p> :
+                        <p className='text-1-d'>{ text }</p> :
                         ( type === "product" ) ? 
-                        <p className='text-1-d'> <span>{ message }</span> redeemed successfully</p>
-                        : <p className='text-1-d'>{ message }</p>
+                        <p className='text-1-d'> <span>{ text }</span> redeemed successfully</p>
+                        : <p className='text-1-d'>{ text }</p>
                 }
 
                 <button onClick={ handleClick }>

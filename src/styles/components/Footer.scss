@@ -1,6 +1,8 @@
 footer{
     height: 200px;
-    margin-top: 50px;
+    margin-top: 70px;
+    position: relative;
+    transition: ease 300ms;
     width: 100%;
     
     .footer-btn{
@@ -17,6 +19,16 @@ footer{
             font-size: 15px;
             font-weight: 500;
         }
+
+    }
+
+    &:hover{
+        
+        p{
+            @include textGradient;
+        }
+
+
     }
 
 }

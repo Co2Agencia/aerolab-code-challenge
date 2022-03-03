@@ -3,6 +3,7 @@
     align-items: flex-end;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .aeropay-arrow{
@@ -26,6 +27,7 @@
     background: $color-neutral-0;
     border: 1px solid $color-neutral-300;
     border-radius: 10px;
+    box-shadow: $box-shadow-default;
     cursor: pointer;
     display: flex;
     gap: 10px;

@@ -21,3 +21,9 @@ nav{
         left: unset;
     }
 }
+
+@media ( max-width: 475px ){
+    nav{
+        padding: 15px $side-margin-mobile;
+    }
+}

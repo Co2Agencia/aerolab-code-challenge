@@ -25,6 +25,29 @@ $filters-general-border-radius: 15px;
             font-size: $filters-font-size;
             font-weight: $filters-general-font-weight;
         }
+
+        .categories-btn{
+            align-items: center;
+            background: none;
+            border-radius: 15px;
+            border: 1px solid $color-neutral-300;
+            display: flex;
+            justify-content: space-between;
+            outline: none;
+            padding: 12px 18px;
+            transition: ease 200ms;
+            width: 200px;
+        
+            p{
+                color: $color-neutral-600;
+                font-size:15px;
+                font-weight: 500;
+            }
+        
+            &:hover{
+                background: $color-neutral-100;
+            }
+        }
     }
 
     .categories-list-container{
@@ -145,6 +168,70 @@ $filters-general-border-radius: 15px;
             }
 
 
+        }
+    }
+}
+
+
+@media ( max-width: 475px ){
+    .products-filters-container{
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        // Categories
+        .categories-container{
+
+            border: none;
+            padding: 0;
+            width: 100%;
+
+            >span{
+                display: none;
+            }
+
+        }
+
+        .categories-list-container{
+            width: 100%;
+            
+            .categories-btn{
+                width: 100%;
+            }
+        }
+
+        // Order By
+        .order-by-container{
+            
+            justify-content: flex-start;
+            overflow: auto;
+            width: 90vw;
+
+            >p{
+                display: none;
+            }
+
+            .order-by-buttons{
+                gap: 10px;
+                margin: 25px 0;
+
+                button{
+                    height: 40px;
+                    width: 150px;
+                }
+            }
+
+            // ScrollBar
+            /* width */
+            &::-webkit-scrollbar {
+                width: 0px;
+                height: 0;
+            }
+
+        }
+
+        // Pagination
+        .products-pagination{
+            display: none;
         }
     }
 }

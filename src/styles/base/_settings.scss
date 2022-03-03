@@ -34,3 +34,11 @@ $color-special-aerolab: linear-gradient(to right, rgba(255,136,0,1) 0%, rgba(255
 // Sizes, Paddings & Margins
 $side-margin: 80px;
 $max-body-width: 1464px;
+
+// Box shadow
+$box-shadow-default: 0px 2px 12px rgba(0, 0, 0, 0.08);
+$box-shadow-2: 0px 2px 8px rgba(0, 0, 0, 0.08);
+$box-shadow-card: 0px 2px 40px rgba(0, 0, 0, 0.05);
+
+/* Mobile Styles */
+$side-margin-mobile: 20px;

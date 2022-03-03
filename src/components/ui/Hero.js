@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { getIllustrations } from '../../helpers/getIllustrations'
 import { useCheckMobile } from '../../hooks/useCheckMobile'
 
@@ -26,7 +26,7 @@ export const Hero = () => {
             </div>
 
             <div className='hero-illustration-container'>
-                <img src={ heroImg }/>
+                <img src={ heroImg } alt="Illustration of a person 'inside the tech zone'"/>
             </div>
 
         </div>

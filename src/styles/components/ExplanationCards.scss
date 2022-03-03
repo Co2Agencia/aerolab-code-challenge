@@ -1,4 +1,6 @@
 $card-border-radius: 30px;
+$card-padding: 8px;
+$border-default: 1px solid $color-neutral-300;
 
 .explanation-cards-container{
     align-items: center;
@@ -10,17 +12,20 @@ $card-border-radius: 30px;
 
     .explanation-card-container{
         background-color: $color-neutral-0;
-        border: 1px solid $color-neutral-300;
+        border: $border-default;
         border-radius: $card-border-radius;
         box-sizing: border-box;
+        padding: $card-padding;
         position: relative;
         transition: ease 500ms;
         width: 30%;
 
         .card-img-container{
             width: 100%;
-            background: $color-special-section-bg;
-            border-radius: $card-border-radius $card-border-radius 0 0;
+            background: $color-special-illustration-bg;
+            border: $border-default;
+            border-bottom: none;
+            border-radius: ($card-border-radius - $card-padding) ($card-border-radius - $card-padding) 0 0;
             
             img{
                 width: 100%;
@@ -28,6 +33,9 @@ $card-border-radius: 30px;
         }
 
         .card-text-container{
+            background-color: $color-neutral-0;
+            border: $border-default;
+            border-radius: 0 0 ($card-border-radius - $card-padding) ($card-border-radius - $card-padding);
             padding: 15px;
             
             p{
@@ -58,19 +66,6 @@ $card-border-radius: 30px;
 
         }
 
-        &::before{
-            background: $color-neutral-0;
-            border: 1px solid $color-neutral-300;
-            border-radius: $card-border-radius + 5px;
-            content: "";
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            z-index: -1;
-        }
-
         &:hover{
             transform: translateY(-20%) !important;
         }
@@ -93,10 +88,69 @@ $card-border-radius: 30px;
     &::before{
         background: $color-special-section-bg;
         content: "";
-        height: 55%;
+        height: 45%;
         // margin-top: -30px;
         position: absolute;
         width: 100%;
         z-index: -1;
     }
+}
+
+
+/* Mobile Styles */
+@media (max-width: 475px) {
+
+    .explanation-cards-container{
+        flex-direction: column;
+        gap: 30px;
+        justify-content: flex-end;
+        margin-top: 0;
+
+        .explanation-card-container{
+            background-color: rgba($color: white, $alpha: .7);
+            padding: 12px;
+            transform: none !important;
+            width: 100%;
+
+            &:hover{ transform: none !important; }
+
+            .card-text-container{
+                p{
+                    width: 100%;
+                }
+            }
+        }
+
+        &::before{
+            height: 220%;
+            margin-bottom: -40px;
+        }
+
+    }
+
+}
+
+
+@media ( max-height: 800px ){
+
+    .explanation-cards-container{
+
+        &::before{
+            height: 235%;
+        }
+
+    }
+
+}
+
+@media ( max-height: 700px ){
+
+    .explanation-cards-container{
+
+        &::before{
+            height: 270%;
+        }
+
+    }
+
 }
