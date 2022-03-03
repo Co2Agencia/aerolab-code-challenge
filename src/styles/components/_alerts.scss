@@ -62,3 +62,18 @@ $alert-width-mobile: 80%;
     }
 
 }
+
+@media ( max-width: 475px ){
+
+    .alert-list-container{
+        box-sizing: border-box;
+        left: 0;
+        padding: 0 5%;
+        width: 100%;
+    }
+
+    .alert-container{
+        padding: 30px;
+    }
+
+}
