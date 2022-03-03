@@ -196,6 +196,8 @@
 
 }
 
+
+/* Mobile Styles */
 @media (max-width: 475px){
 
     .product-container, .product-skeleton-container{
@@ -213,3 +215,27 @@
     }
 
 }
+
+/* Tablet Styles */
+@media (max-width: 1024px){
+
+    .product-container, .product-skeleton-container{
+
+        height: 380px;
+
+        .product-card-container{
+            height: 85%;
+        }
+
+        .product-button{
+            height: 45px;
+        }
+
+        .product-img-container{
+            height: 80%;
+        }
+
+    }
+
+}
+

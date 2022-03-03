@@ -22,7 +22,25 @@
     }
 }
 
+/* Mobile Styles */
 @media ( max-width: 475px ){
+
+    .products-footer{
+        margin-top: 70px;
+        flex-direction: column-reverse;
+
+        .products-amount-container{
+            margin-top: 25px;
+            left: unset;
+            position: relative;
+            transform: unset;
+        }
+    }
+
+}
+
+/* Tablet Styles */
+@media ( max-width: 1024px ){
 
     .products-footer{
         margin-top: 70px;

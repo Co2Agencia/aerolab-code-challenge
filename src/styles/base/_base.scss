@@ -105,7 +105,14 @@ body, html{
 }
 
 
+/* Mobile Styles */
 @media ( max-width: 475px ){
+    .tech-zone-container{
+        margin: 0 $side-margin-mobile;
+    }
+}
+
+@media ( max-width: 1024px ){
     .tech-zone-container{
         margin: 0 $side-margin-mobile;
     }

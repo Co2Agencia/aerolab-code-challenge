@@ -160,3 +160,52 @@
     }
 
 }
+
+
+/* Table Styles */
+@media ( max-width: 1024px ){
+    .hero-container{
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20vh;
+        padding-bottom: 0;
+
+        >div{
+            width: 100%;
+        }
+
+        &::before{
+            animation: none;
+            background-size: 120%;
+            bottom: 10%;
+        }
+    }
+
+    .hero-text-container{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+        h1{
+            font-size: 96px;
+        }
+
+        a{
+            height: 64px;
+            width: 90%;
+
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+
+    .hero-illustration-container{
+
+        &::before{
+            content: none;
+        }
+    }
+}
