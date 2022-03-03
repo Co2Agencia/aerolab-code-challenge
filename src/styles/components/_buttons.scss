@@ -1,0 +1,202 @@
+/* ------ Buttons ------ */
+button{
+    cursor: pointer;
+}
+
+// cta
+.btn-cta{
+    align-items: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    gap: 10px;
+    height: 47px;
+    justify-content: center;
+    font-weight: 500;
+    outline: none;
+    padding: 0;
+    transition: ease 200ms;
+    width: 250px;
+}
+
+.btn-cta-default{
+    background: $color-brand-default;
+    color: $color-neutral-0;
+
+    &:hover{
+        background: $color-brand-hover;
+    }
+}
+
+.btn-cta-processing{
+    background: $color-brand-default;
+    color: $color-neutral-0;
+    opacity: .7;
+}
+
+.btn-cta-disabled{
+    background: $color-neutral-200;
+    color: $color-neutral-600;
+}
+
+
+// Landing cta
+.btn-cta-landing{
+    background: $color-brand-default;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: $color-neutral-0;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+    height: 55px;
+    outline: none;
+    padding: 0;
+    text-transform: uppercase;
+    width: 200px;
+
+    &:hover{
+        background: $color-brand-hover;
+    }
+}
+
+
+// Number Buttons
+@mixin btn-number{
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    gap: 10px;
+    height: 35px;
+    justify-content: center;
+    font-weight: 500;
+    outline: none;
+    padding: 0;
+    transition: ease 200ms;
+    width: 85px;
+}
+
+.btn-number-not-selected{
+    @include btn-number();
+
+    background: $color-neutral-200;
+
+    span{
+        background: $color-brand-default;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &:hover{
+        background: $color-neutral-300;
+    }
+
+}
+
+.btn-number-selected{
+    @include btn-number();
+
+    background: $color-brand-default;
+
+    span{
+        color: $color-neutral-100;
+    }
+
+    &:hover{
+        background: $color-brand-hover;
+    }
+}
+
+
+
+// Product Buttons
+.product-button{
+    align-items: center;
+    background: $color-brand-default;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+    width: 100%;
+    z-index: 10;
+
+    p{
+        align-items: center;
+        color: $color-neutral-0;
+        display: flex;
+        font-weight: 500;
+        gap: 8px;
+        font-size: 15px;
+        justify-content: center;
+    }
+
+    svg{
+        width: 20px;
+    }
+
+    &.no-points{
+        background: $color-neutral-200;
+        cursor: not-allowed;
+
+        p{
+            color: $color-neutral-600;
+        }
+
+        svg{
+            rect{ fill: $color-neutral-600 }
+            path{ fill: $color-neutral-0}
+        }
+    }
+
+    &.processing{
+        background: $color-brand-opacity;
+        cursor:progress;
+
+        &:hover{
+            background: $color-brand-opacity;
+        }
+    }
+
+    &:hover{
+        background: $color-brand-hover;
+
+        &.no-points{
+            background: $color-neutral-300
+        }
+    }
+}
+
+
+// Product categories filter button
+.categories-btn{
+    align-items: center;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid $color-neutral-300;
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+    padding: 12px 18px;
+    transition: ease 200ms;
+    width: 200px;
+
+    p{
+        color: $color-neutral-600;
+        font-size:15px;
+        font-weight: 500;
+    }
+
+    &:hover{
+        background: $color-neutral-100;
+    }
+}

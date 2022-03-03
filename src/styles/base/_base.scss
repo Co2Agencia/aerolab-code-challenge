@@ -1,0 +1,105 @@
+*{
+    font-family: 'Montserrat';
+    margin: 0;
+}
+
+body, html{
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.tech-zone-container{
+    max-width: $max-body-width;
+    margin: 0 $side-margin;
+}
+
+/* ------ Icons ------ */
+.icon-bg{ // Big icon
+    width: 24px;
+    height: 24px;
+}
+
+.icon-sm{ // Small icon
+    width: 20px;
+    height: 20px;
+}
+
+
+/* ------ Titles ------ */
+.title-1{
+    color: $color-neutral-900;
+    font-size: 200px;
+    font-weight: 900;
+    line-height: 80%;
+    text-transform: uppercase;
+}
+
+.title-2{
+    color: $color-neutral-900;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 80%;
+    text-transform: uppercase;
+}
+.title-3{
+    color: $color-neutral-900;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+/* ------ Text ------ */
+.text-1-d{ // Default
+    color: $color-neutral-900;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+.text-1-ac{ // All Capital letters
+    color: $color-neutral-900;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 24%;
+    text-transform: uppercase;
+}
+
+.text-1-lw{ // Light Weight
+    color: $color-neutral-900;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+.text-2-d{ // Default
+    color: $color-neutral-900;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+.text-2-ac{ // All Capital letters
+    color: $color-neutral-900;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* Text with gradient */
+@mixin textGradient {
+
+    background: $color-brand-default;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

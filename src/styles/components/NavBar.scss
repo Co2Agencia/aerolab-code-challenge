@@ -1,0 +1,23 @@
+nav{
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box;   
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    padding: 15px $side-margin;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: $max-body-width;
+    z-index: 20;
+}
+
+
+@media ( min-width: 1650px ){
+    nav{
+        padding: 15px 0;
+        left: unset;
+    }
+}

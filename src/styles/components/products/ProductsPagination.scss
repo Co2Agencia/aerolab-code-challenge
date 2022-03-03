@@ -1,0 +1,42 @@
+.products-pagination{
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 12px;
+    border: 1px solid $color-neutral-300;
+    border-radius: 15px;
+
+    .page-number{
+        font-size: $filters-font-size;
+        font-weight: $filters-general-font-weight;
+
+        span{
+            @include textGradient;
+        }
+    }
+
+    .pagination-btn{
+        background: $color-brand-light;
+        border: none;
+        border-radius: 5px;
+        height: 30px;
+        width: 30px;
+
+        img{
+            width: 100%;
+        }
+
+        &.blocked{
+            background: $color-neutral-200;
+            cursor: default;
+            img{
+                opacity: .2;
+            }
+        }
+
+        &.btn-pre{
+            transform: rotate(180deg);
+        }
+    }
+}

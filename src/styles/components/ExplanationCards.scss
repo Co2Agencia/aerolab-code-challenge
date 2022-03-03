@@ -1,0 +1,102 @@
+$card-border-radius: 30px;
+
+.explanation-cards-container{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 100px 0;
+    width: 100%;
+
+    .explanation-card-container{
+        background-color: $color-neutral-0;
+        border: 1px solid $color-neutral-300;
+        border-radius: $card-border-radius;
+        box-sizing: border-box;
+        position: relative;
+        transition: ease 500ms;
+        width: 30%;
+
+        .card-img-container{
+            width: 100%;
+            background: $color-special-section-bg;
+            border-radius: $card-border-radius $card-border-radius 0 0;
+            
+            img{
+                width: 100%;
+            }
+        }
+
+        .card-text-container{
+            padding: 15px;
+            
+            p{
+                color: $color-neutral-600;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 5px 0;
+                width: 80%;
+            }
+        }
+
+        .card-title-container{
+
+            align-items: center;
+            display: flex;
+            gap: 10px;
+
+            h3{
+                font-size: 25px;
+                @include textGradient;
+            }
+
+            img{
+                background-color: $color-brand-light;
+                border-radius: 8px;
+                padding: 5px;
+            }
+
+        }
+
+        &::before{
+            background: $color-neutral-0;
+            border: 1px solid $color-neutral-300;
+            border-radius: $card-border-radius + 5px;
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            z-index: -1;
+        }
+
+        &:hover{
+            transform: translateY(-20%) !important;
+        }
+
+        &:nth-child(1){
+            transform: rotateZ(-5deg) translateX(40px);
+        }
+
+        &:nth-child(2){
+            transform: translateY(-40px);
+        }
+
+        &:nth-child(3){
+            transform: rotateZ(5deg) translateX(-40px);
+        }
+
+    }
+
+
+    &::before{
+        background: $color-special-section-bg;
+        content: "";
+        height: 55%;
+        // margin-top: -30px;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+}

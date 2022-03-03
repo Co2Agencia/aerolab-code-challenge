@@ -1,0 +1,23 @@
+.products-footer{
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    position: relative;
+    
+    .products-amount-container{
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+
+        p{
+            font-weight: 500;
+            font-size: 15px;
+            color: $color-blue-default;
+            
+            span{
+                color: $color-neutral-600;
+            }
+        }
+    }
+}

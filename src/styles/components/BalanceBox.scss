@@ -1,0 +1,125 @@
+/* Balance Box */
+.balance-box-container{
+    align-items: center;
+    background: $color-neutral-0;
+    border: 1px solid $color-neutral-300;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 65px;
+    width: fit-content;
+}
+
+.balance-box-title-container{
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $color-neutral-300;
+}
+
+.balance-box-body{
+    padding: 20px;
+
+    form{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        padding-top: 40px;
+        width: 100%;
+
+        > button{
+            width: 100%;
+
+            *{
+                color: $color-neutral-100;
+            }
+
+            img{
+                width: 24px;
+            }
+        }
+
+    }
+
+}
+
+.card-container{
+
+    background: $color-neutral-900;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    padding: 20px 14px;
+    position: relative;
+    transition: ease 200ms;
+    transform: translateZ(20px);
+    width: 270px;
+
+    *{
+        color: $color-neutral-100;
+    }
+
+    svg{
+        background-color: $color-neutral-100;
+        border-radius: 100%;
+    }
+
+    p{
+        font-weight: 500;
+    }
+
+    > div{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &::before{
+        content: "";
+        background-image: url( '../../assets/illustrations/single-wave-pattern.svg' );
+        background-size: 100%;
+        bottom: 0;
+        height: 60%;
+        left: 0;
+        opacity: .1;
+        position: absolute;
+        transition: ease-in-out 500ms;
+        width: 100%;
+        animation-name: wave-move;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    
+    &:hover{
+        
+        &::before{
+            // animation-play-state: paused;
+        }
+    }
+
+}
+
+@keyframes wave-move{
+    0%{
+        background-position-y: 0%;
+    }
+    100%{
+        background-position-y: 100%;
+    }
+}
+
+.balance-buttons-container{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

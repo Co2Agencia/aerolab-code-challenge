@@ -1,0 +1,27 @@
+
+/* Animation Settings */
+@mixin defaultAnimation {
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading{
+    0%{
+        background: $color-neutral-200;
+    }
+    50%{
+        background: $color-neutral-300;
+    }
+    100%{
+        background: $color-neutral-200;
+    }
+}
+
+
+/* Loading Elements */
+.user-loading{
+    height: 16px;
+    width: 50px;
+    @include defaultAnimation();
+}
