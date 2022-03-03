@@ -22,8 +22,8 @@
     }
 }
 
-/* Mobile Styles */
-@media ( max-width: 475px ){
+/* Tablet Styles */
+@media ( max-width: 1024px ){
 
     .products-footer{
         margin-top: 70px;
@@ -39,8 +39,9 @@
 
 }
 
-/* Tablet Styles */
-@media ( max-width: 1024px ){
+
+/* Mobile Styles */
+@media ( max-width: 475px ){
 
     .products-footer{
         margin-top: 70px;

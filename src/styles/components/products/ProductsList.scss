@@ -21,6 +21,23 @@
 }
 
 
+/* Tablet Styles */
+@media (max-width: 1024px) {
+
+    .products-list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .products-title-container{
+        
+        padding: 40px 0;
+
+        h2{ font-size: 32px; }
+    }
+
+} 
+
+
 /* Mobile Styles */
 @media (max-width: 475px) {
 
@@ -39,18 +56,3 @@
 } 
 
 
-/* Tablet Styles */
-@media (max-width: 1024px) {
-
-    .products-list{
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .products-title-container{
-        
-        padding: 40px 0;
-
-        h2{ font-size: 32px; }
-    }
-
-} 

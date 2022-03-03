@@ -197,25 +197,6 @@
 }
 
 
-/* Mobile Styles */
-@media (max-width: 475px){
-
-    .product-container, .product-skeleton-container{
-
-        height: 500px;
-
-        .product-card-container{
-            height: 85%;
-        }
-
-        .product-button{
-            height: 55px;
-        }
-
-    }
-
-}
-
 /* Tablet Styles */
 @media (max-width: 1024px){
 
@@ -238,4 +219,26 @@
     }
 
 }
+
+
+
+/* Mobile Styles */
+@media (max-width: 475px){
+
+    .product-container, .product-skeleton-container{
+
+        height: 500px;
+
+        .product-card-container{
+            height: 85%;
+        }
+
+        .product-button{
+            height: 55px;
+        }
+
+    }
+
+}
+
 
