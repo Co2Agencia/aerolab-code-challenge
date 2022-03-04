@@ -9,7 +9,7 @@ export const Hero = () => {
     return (
         <div className='hero-container'>
 
-            <div className='hero-text-container'>
+            <div className='hero-text-container animate__animated animate__fadeInLeft'>
 
                     <span className='text-1-ac'>explore the</span>
                     
@@ -26,7 +26,7 @@ export const Hero = () => {
             </div>
 
             <div className='hero-illustration-container'>
-                <img src={ heroImg } alt="Illustration of a person 'inside the tech zone'"/>
+                <img src={ heroImg } alt="Illustration of a person 'inside the tech zone'" className='animate__animated animate__fadeInRight'/>
             </div>
 
         </div>
