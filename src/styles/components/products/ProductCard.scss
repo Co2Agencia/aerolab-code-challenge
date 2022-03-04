@@ -205,7 +205,7 @@
         height: 380px;
 
         .product-card-container{
-            // height: 85%;
+            height: 85%;
         }
 
         .product-button{
@@ -231,6 +231,12 @@
 
         .product-card-container{
             // height: 85%;
+            .product-info-container{
+
+                h3{ font-size: 18px; }
+                span{ font-size: 14px; }
+    
+            }
         }
 
         .product-button{

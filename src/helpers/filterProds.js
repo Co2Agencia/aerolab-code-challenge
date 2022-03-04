@@ -1,8 +1,7 @@
 import { orderByTypes } from "../types/orderByTypes";
 
-export const filterProds = (products = [], action, userPoints ) => {
+export const filterProds = (products = [], action, userPoints, prodsPerPage = 16 ) => {
 
-    const prodsPerPage = 16
     let newState;
 
     const { category, page, orderBy } = action

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import { getProducts } from "../helpers/getProducts"
 
-export const useFetchProducts = () => {
+export const useFetchProducts = ( prodsPerPage = 16 ) => {
 
-    const prodsPerPage = 16
     const [state, setState] = useState({
         data: [],
         loading: true,

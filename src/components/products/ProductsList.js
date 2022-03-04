@@ -9,7 +9,9 @@ import { ProductsPagination } from './ProductsPagination'
 
 export const ProductsList = ({ userData, setUserData, dispatchAlert }) => {
 
-    let { data: prods, loading } = useFetchProducts()
+    const prodsPerPage = 16
+    let { data: prods, loading } = useFetchProducts( prodsPerPage )
+
     const categories = getCategories( prods )
     
     const [ page, setPage ] = useState( 1 )
@@ -28,7 +30,7 @@ export const ProductsList = ({ userData, setUserData, dispatchAlert }) => {
         const action = {
             page, category, orderBy
         }
-        const newProds = filterProds( prods, action, userData.data.points )        
+        const newProds = filterProds( prods, action, userData.data.points, prodsPerPage )        
         setFilteredProdsData( newProds )
 
     }, [ page, category, orderBy, loading ])
@@ -85,8 +87,8 @@ export const ProductsList = ({ userData, setUserData, dispatchAlert }) => {
 
             <div className='products-amount-container'>
                 <p className='text-1-d'>
-                    { filteredProdsData.products.length } of { filteredProdsData.productsAmount }
-                    <span> products</span>
+                    <span>{ ( prodsPerPage * ( page - 1 ) ) + filteredProdsData.products.length } of { filteredProdsData.productsAmount } </span> 
+                    products
                 </p>
             </div>
 

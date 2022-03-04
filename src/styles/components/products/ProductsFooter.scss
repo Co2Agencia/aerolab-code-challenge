@@ -13,10 +13,11 @@
         p{
             font-weight: 500;
             font-size: 15px;
-            color: $color-blue-default;
+            color: $color-neutral-600;
+            // color: $color-blue-default;
             
             span{
-                color: $color-neutral-600;
+                @include textGradient;
             }
         }
     }
