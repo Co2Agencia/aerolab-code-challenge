@@ -10,12 +10,12 @@
         background-color: $color-neutral-0;
         border: 1px solid $color-neutral-300;
         border-radius: 12px;
-        height: 90%;
+        height: 350px;
         overflow: hidden;
     }
 
     .product-button{
-        height: 10%;
+        height: 50px;
         width: 100%;
         z-index: 10;
     }
@@ -205,7 +205,7 @@
         height: 380px;
 
         .product-card-container{
-            height: 85%;
+            // height: 85%;
         }
 
         .product-button{
@@ -230,7 +230,7 @@
         height: 500px;
 
         .product-card-container{
-            height: 85%;
+            // height: 85%;
         }
 
         .product-button{
