@@ -17,7 +17,7 @@ export const Footer = () => {
           onMouseEnter={ toggleIconImage }
           onMouseLeave={ toggleIconImage }
         >
-            <img src={ getIconImages( iconImage ) }/>
+            <img src={ getIconImages( iconImage ) } alt="Github logo"/>
             <p className='text-1-d'>View this repository</p>
         </a>
     </footer>

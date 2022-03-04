@@ -29,11 +29,14 @@ export const ProductsPagination = ({ page, setPage, pagesAmount }) => {
             'pagination-btn btn-pre blocked' : 'pagination-btn btn-pre'
         }
             onClick={ () => handleClick( "previous" ) }
+            ariaLabel = "Previous Page"
         >
             <img src={ 
                 (page <= 1) ?
                     getIconImages( 'chevron-default' ) : getIconImages( 'chevron-active' )
-            }/>
+            }
+            alt="Previous Arrow icon"
+            />
         </button>
 
         <p className='page-number text-1-d'>
@@ -45,11 +48,14 @@ export const ProductsPagination = ({ page, setPage, pagesAmount }) => {
             'pagination-btn btn-next blocked' : 'pagination-btn btn-next'
         }
             onClick={ () => handleClick( "next" ) }
+            ariaLabel = "Next Page"
         >
             <img src={ 
                 (page >= pagesAmount) ?
                     getIconImages( 'chevron-default' ) : getIconImages( 'chevron-active' )
-            }/>
+            }
+            alt="Next Arrow icon"
+            />
         </button>
 
     </div>

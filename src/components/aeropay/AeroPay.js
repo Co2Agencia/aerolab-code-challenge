@@ -21,9 +21,9 @@ export const AeroPay = ({ userData, setUserData, alerts2, dispatchAlert }) => {
     <div className='aeropay-container'>
 
         <button className='aeropay-button-container' onClick={ handleClick }>
-            <img className='aeropay-aerolab-logo' src={ getIconImages( 'aeropay-1' ) }/>
+            <img className='aeropay-aerolab-logo' src={ getIconImages( 'aeropay-1' ) } alt="Aerolab logo"/>
             <span className={ userData.loading ? 'user-loading' : 'animate__animated animate__fadeIn' }>{ userData.data.points }</span>
-            <img className={ activeClass ? `${ arrowIconClass } ${arrowIconClassActive}` : arrowIconClass  } src={ getIconImages( 'chevron-default' ) }/>
+            <img className={ activeClass ? `${ arrowIconClass } ${arrowIconClassActive}` : arrowIconClass  } src={ getIconImages( 'chevron-default' ) } alt="Arrow icon"/>
         </button>
 
         {
