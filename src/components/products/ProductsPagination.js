@@ -29,7 +29,7 @@ export const ProductsPagination = ({ page, setPage, pagesAmount }) => {
             'pagination-btn btn-pre blocked' : 'pagination-btn btn-pre'
         }
             onClick={ () => handleClick( "previous" ) }
-            ariaLabel = "Previous Page"
+            aria-label = "Previous Page"
         >
             <img src={ 
                 (page <= 1) ?
@@ -48,7 +48,7 @@ export const ProductsPagination = ({ page, setPage, pagesAmount }) => {
             'pagination-btn btn-next blocked' : 'pagination-btn btn-next'
         }
             onClick={ () => handleClick( "next" ) }
-            ariaLabel = "Next Page"
+            aria-label = "Next Page"
         >
             <img src={ 
                 (page >= pagesAmount) ?

@@ -15,7 +15,7 @@ export const NavBar = ({ userData, setUserData, alerts2, dispatchAlert }) => {
       <div className='nav-container'>
         
         <div className='nav-logo-container'>
-            <img src={ getIconImages( navLogo ) } alt="Menu Logo"/>
+            <img src={ getIconImages( navLogo ) } alt="Menu Aerolab Logo"/>
         </div>
 
         <AeroPay userData={ userData }
